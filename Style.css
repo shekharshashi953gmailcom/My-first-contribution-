@@ -1,0 +1,59 @@
+/* Fonts used from google fonts*/
+body {
+  font-family: 'Courgette', cursive; 
+  
+    text-align: center;
+  }
+  
+  /* Style the stopwatch container */
+.stopwatch-container {
+    
+    max-width: 500px;
+    margin: 100px auto;
+    background-image:url(background.jpg) ;
+    background-size: cover;
+    background-position: center;
+    background-color: #fcfcfc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .display {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Apply background images to buttons and remove default button styles */
+  .controls button {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 5px;
+    outline: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  /* Apply background images to all buttons */
+ 
+#start {
+    background-image: url('startbutton1.png');
+    
+ 
+  }
+  
+  #pause {
+    background-image: url('pausebutton1.png');
+  }
+  
+  #reset {
+    background-image: url('resetbutton1.png');
+  }
+  
+  /* Add hover effect if desired */
+  .controls button:hover {
+    transform: scale(1.1);
+  }
