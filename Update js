@@ -1,0 +1,50 @@
+let intervalId;
+let isRunning = false;
+let isPaused = false;
+let elapsedTime = 0;
+
+function updateDisplay() {
+  const display = document.getElementById('time');
+  const formattedTime = formatTime(elapsedTime);
+  display.textContent = formattedTime;
+}
+
+function formatTime(time) {
+  const hours = Math.floor(time / 3600);
+  const minutes = Math.floor((time % 3600) / 60);
+  const seconds = time % 60;
+
+  const formattedHours = String(hours).padStart(2, '0');
+  const formattedMinutes = String(minutes).padStart(2, '0');
+  const formattedSeconds = String(seconds).padStart(2, '0');
+
+  return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+}
+
+function start() {
+  if (!isRunning) {
+    intervalId = setInterval(() => {
+      elapsedTime++;
+      updateDisplay();
+    }, 1000);
+    isRunning = true;
+  }
+}
+
+function pause() {
+  if (isRunning) {
+    clearInterval(intervalId);
+    isRunning = false;
+    isPaused = true;
+  }
+}
+
+function reset() {
+  clearInterval(intervalId);
+  elapsedTime = 0;
+  isRunning = false;
+  isPaused = false;
+  updateDisplay();
+}
+
+updateDisplay();
